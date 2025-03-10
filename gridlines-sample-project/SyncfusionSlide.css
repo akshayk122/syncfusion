@@ -1,0 +1,119 @@
+/* Main slide container */
+.syncfusion-slide {
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Base shape styling */
+.syncfusion-shape {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Ensure text is visible with proper contrast */
+.syncfusion-shape div {
+  margin: 0;
+  padding: 4px;
+}
+
+/* Indented bullet points */
+.bullet-indent {
+  text-align: left;
+  margin-left: 20px !important;
+  padding-left: 10px !important;
+}
+
+/* Web fonts fallback */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Empty shapes need to be visible */
+.syncfusion-shape:empty {
+  min-height: 20px;
+  min-width: 20px;
+}
+
+/* Specific shape type styling */
+.shape-rectangle {
+  border-radius: 0;
+}
+
+.shape-roundedrectangle {
+  border-radius: 10px;
+}
+
+.shape-circle, .shape-oval {
+  border-radius: 50%;
+}
+
+/* Shape clipPaths for modern browsers */
+.shape-rightarrow {
+  clip-path: polygon(0 25%, 75% 25%, 75% 0, 100% 50%, 75% 100%, 75% 75%, 0 75%);
+}
+
+.shape-leftarrow {
+  clip-path: polygon(25% 0%, 25% 20%, 100% 20%, 100% 80%, 25% 80%, 25% 100%, 0% 50%);
+}
+
+.shape-uparrow {
+  clip-path: polygon(20% 25%, 0% 25%, 50% 0%, 100% 25%, 80% 25%, 80% 100%, 20% 100%);
+}
+
+.shape-downarrow {
+  clip-path: polygon(20% 0%, 20% 75%, 0% 75%, 50% 100%, 100% 75%, 80% 75%, 80% 0%);
+}
+
+.shape-diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.shape-triangle {
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.shape-pentagon {
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.shape-hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* Fallback for clipPath in older browsers */
+@supports not (clip-path: polygon(0 0)) {
+  .shape-rightarrow, .shape-leftarrow, .shape-uparrow, .shape-downarrow, 
+  .shape-diamond, .shape-triangle, .shape-pentagon, .shape-hexagon {
+    position: relative;
+  }
+  
+  .shape-rightarrow::after, .shape-leftarrow::after, .shape-uparrow::after, 
+  .shape-downarrow::after, .shape-diamond::after, .shape-triangle::after, 
+  .shape-pentagon::after, .shape-hexagon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .shape-rightarrow::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'%3E%3Cpolygon points='0,10 75,10 75,0 100,25 75,50 75,40 0,40' fill='%23e67e22'/%3E%3C/svg%3E");
+  }
+  
+  .shape-leftarrow::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'%3E%3Cpolygon points='25,0 25,10 100,10 100,40 25,40 25,50 0,25' fill='%233498db'/%3E%3C/svg%3E");
+  }
+  
+  .shape-uparrow::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100'%3E%3Cpolygon points='10,25 0,25 25,0 50,25 40,25 40,100 10,100' fill='%232ecc71'/%3E%3C/svg%3E");
+  }
+  
+  .shape-downarrow::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100'%3E%3Cpolygon points='10,0 10,75 0,75 25,100 50,75 40,75 40,0' fill='%239b59b6'/%3E%3C/svg%3E");
+  }
+}
