@@ -82,4 +82,4 @@ Results
 
 # React Page Rendering
 
-![#](<Screenshot 2025-03-10 at 5.29.44 PM.png>)
+![#](<react_component.png>)
